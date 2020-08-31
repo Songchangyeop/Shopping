@@ -8,8 +8,11 @@
   --color-light-grey: #dfdfdf;
 
   /* size */
+  --base-space: 8px;
   --size-button: 60px;
-  --button-font-size: 18px;
+  --font-size: 18px;
+  --size-border: 4px;
+  --size-thumbnail: 50px;
 
   /* annimation */
   --animation-duration: 300ms;
@@ -51,12 +54,18 @@ ul {
 
 /* Button */
 
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
 .btn {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   transition: transform var(--animation-duration) ease;
+  margin-right: var(--base-space);
 }
 
 .imgBtn {
@@ -65,7 +74,9 @@ ul {
 }
 
 .colorBtn {
-  font-size: var(--button-font-size);
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) * 2);
+  border-radius: var(--size-border);
 }
 
 .blue {
@@ -77,4 +88,31 @@ ul {
 }
 .pink {
   background-color: var(--color-pink);
+}
+
+/* items */
+
+.items {
+  width: 60%;
+  height: 60%;
+  padding-left: 0;
+  overflow-y: scroll;
+}
+
+.item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+}
+
+.item__thumbnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
+}
+
+.item__desctiption {
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
 }
