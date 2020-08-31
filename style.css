@@ -1,0 +1,80 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /* size */
+  --size-button: 60px;
+  --button-font-size: 18px;
+
+  /* annimation */
+  --animation-duration: 300ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  border: 0px;
+  border-radius: 5%;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Logo */
+
+.logo {
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Button */
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--button-font-size);
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+.pink {
+  background-color: var(--color-pink);
+}
