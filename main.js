@@ -9,6 +9,7 @@ function loadItems() {
 
 // 받은 아이템으로 리스트 업데이트
 function displayItems(items) {
+  console.log(items);
   const container = document.querySelector('.items');
   container.innerHTML = items.map((item) => createHTMLString(item)).join('');
 }
@@ -16,9 +17,10 @@ function displayItems(items) {
 // 받은 아이템으로 HTML <li> 생성
 function createHTMLString(item) {
   return `
-  <li class="item">
+  <li class="item" data>
      <img src="${item.image}" alt="${item.type}" class="item__thumbnail" />
      <span class="item__desctiption">${item.gender}, ${item.size}</span>
+
   </li>
   `;
 }
@@ -32,8 +34,20 @@ function onButtonClick(event, items) {
   if (key == null || value == null) {
     return;
   }
-  const filtered = items.filter((item) => item[key] === value);
-  displayItems(filtered);
+
+  updateItem(items, key, value);
+}
+
+function updateItem(items, key, value) {
+  items.forEach((item) => {
+    if (item[key] === value) {
+      list.classList.remove('invisible');
+      console.log('yes');
+    } else {
+      list.classList.add('invisible');
+      console.log('no');
+    }
+  });
 }
 
 function setEventListener(items) {
