@@ -39,15 +39,17 @@ function onButtonClick(event, items) {
 }
 
 function updateItem(items, key, value) {
-  items.forEach((item) => {
-    if (item[key] === value) {
-      list.classList.remove('invisible');
+  const list = document.querySelectorAll('.item');
+
+  for (let i = 0; i < items.length; i++) {
+    if (items[i][key] === value) {
+      list[i].classList.remove('invisible');
       console.log('yes');
     } else {
-      list.classList.add('invisible');
+      list[i].classList.add('invisible');
       console.log('no');
     }
-  });
+  }
 }
 
 function setEventListener(items) {
