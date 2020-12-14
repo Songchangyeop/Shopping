@@ -6,16 +6,6 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
-
-  /* size */
-  --base-space: 8px;
-  --size-button: 60px;
-  --font-size: 18px;
-  --size-border: 4px;
-  --size-thumbnail: 50px;
-
-  /* annimation */
-  --animation-duration: 300ms;
 }
 
 * {
@@ -24,99 +14,86 @@
 
 body {
   background-color: var(--color-black);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 button {
-  border: 0px;
-  border-radius: 5%;
+  padding: 0;
 }
 
-ul {
-  list-style: none;
-}
-
-/* Logo */
-
-.logo {
-  cursor: pointer;
-  transition: transform var(--animation-duration) ease;
-}
-
-.btn:hover,
-.logo:hover {
-  transform: scale(1.1);
-}
-
-/* Button */
-
-.buttons {
+.shopping-mall {
+  width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+
+.shopping-tap {
+  width: 400px;
 }
 
 .btn {
   background-color: transparent;
   border: none;
-  outline: none;
-  cursor: pointer;
-  transition: transform var(--animation-duration) ease;
-  margin-right: var(--base-space);
 }
 
-.imgBtn {
-  width: var(--size-button);
-  height: var(--size-button);
+.btn-color {
+  border-radius: 5px;
 }
 
-.colorBtn {
-  font-size: var(--font-size);
-  padding: calc(var(--base-space) * 2);
-  border-radius: var(--size-border);
-}
-
-.blue {
+.btn-blue {
+  border: 0;
   background-color: var(--color-blue);
 }
 
-.yellow {
+.btn-yellow {
+  border: 0;
   background-color: var(--color-yellow);
 }
-.pink {
+
+.btn-pink {
+  border: 0;
   background-color: var(--color-pink);
 }
 
-/* items */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-.items {
-  width: 60%;
-  height: 60%;
-  padding-left: 0;
+.btn > img,
+button {
+  width: 50px;
+  height: 50px;
+}
+
+.shopping-list {
+  width: auto;
+  height: auto;
+  margin-top: 50px;
+  list-style: none;
   overflow-y: scroll;
 }
 
-.item {
-  background-color: var(--color-white);
+.shopping-item {
   display: flex;
   align-items: center;
-  padding: var(--base-space);
-  margin-bottom: var(--base-space);
+  width: 400px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0px 30px 0px 30px;
+  margin-bottom: 10px;
+}
+
+.shopping-item > img {
+  width: 50px;
+  margin-right: 20px;
 }
 
 .invisible {
   display: none;
-}
-
-.item__thumbnail {
-  width: var(--size-thumbnail);
-  height: var(--size-thumbnail);
-}
-
-.item__desctiption {
-  margin-left: var(--base-space);
-  font-size: var(--font-size);
 }
